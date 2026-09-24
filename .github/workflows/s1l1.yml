@@ -55,4 +55,4 @@ jobs:
         env:
           SSHPASS: ${{ secrets.VPS_PASSWORD }}
         run: |
-          sshpass -e ssh -o StrictHostKeyChecking=no vm-a "sudo systemctl reload nginx"
+          sshpass -e ssh -o StrictHostKeyChecking=no vm-a "echo '${SSHPASS}' | sudo -S systemctl reload nginx"
